@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:translate="clr-namespace:MauiTrackTestSP.Resources.Strings"
+             x:Class="MauiTrackTestSP.MainPage">
+
+    <ScrollView>
+        <Grid VerticalOptions="Start" ColumnSpacing="5" RowSpacing="20" Margin="10,10,10,300">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnGetCurrentLocation" Text="{x:Static translate:AppResources.GetCurrentLocation}" VerticalOptions="Center" />
+            <Label x:Name="lblCurrentLocation" Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Center" />
+            <Button x:Name="btnStartTracking" Text="{x:Static translate:AppResources.StartTracking}" Grid.Row="4" VerticalOptions="Center"/>
+            <Button x:Name="btnStopTracking" Text="{x:Static translate:AppResources.StopTracking}" Grid.Row="4" Grid.Column="1" VerticalOptions="Center"/>
+            <Label x:Name="lblStartedTracking" Grid.Row="5" VerticalOptions="Center"  FontSize="16" />
+            <Label Text="{x:Static translate:AppResources.Started}" Grid.Row="5" Grid.Column="1" VerticalOptions="Center"  FontSize="16" />
+            <Label x:Name="lblTrackedTime" Grid.Row="6" VerticalOptions="Center" TextColor="Gray"  FontSize="16" />
+            <Label x:Name="lblTrackedLocation" Grid.Row="6" Grid.Column="1" VerticalOptions="Center"  FontSize="16" />
+            <Label x:Name="lblStoppedTracking" Grid.Row="7" VerticalOptions="Center"  FontSize="16" />
+            <Label Text="{x:Static translate:AppResources.Stopped}" Grid.Row="7" Grid.Column="1" VerticalOptions="Center"  FontSize="16" />
+            <StackLayout Orientation="Horizontal" Grid.Row="8" Grid.ColumnSpan="2" VerticalOptions="Center">
+                <Label Text="{x:Static translate:AppResources.AddressLabel}" VerticalOptions="Center" />
+                <Entry x:Name="txtAddress" Text="15503 Rio Terrace Dr, Edmonton, AB" VerticalOptions="Center" />
+                <Button x:Name="btnGeocode" Text="{x:Static translate:AppResources.Geocode}" VerticalOptions="Center" />
+            </StackLayout>
+            <Label x:Name="lblGeocodeResult" Grid.Row="9" Grid.ColumnSpan="2" VerticalOptions="Center" FontSize="16" />
+            <StackLayout Orientation="Horizontal" Grid.Row="10" Grid.ColumnSpan="2" VerticalOptions="Center">
+                <Label Text="Lat:" VerticalOptions="Center" />
+                <Entry x:Name="txtLatitude" Text="53.504292" WidthRequest="100" VerticalOptions="Center" />
+                <Label Text="Lng:" VerticalOptions="Center" />
+                <Entry x:Name="txtLongitude" Text="-113.588806" WidthRequest="100" VerticalOptions="Center" />
+                <Button x:Name="btnReverseGeocode" Text="{x:Static translate:AppResources.Reverse}" VerticalOptions="Center" />
+            </StackLayout>
+            <Label x:Name="lblReverseGeocodeResult" Grid.Row="11" Grid.ColumnSpan="2" VerticalOptions="Center" FontSize="16" />
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
